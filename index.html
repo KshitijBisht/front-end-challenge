@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="actions.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ParkIT v1.0</title>
+</head>
+<body onload="onload();">
+    <div id="start">
+    Enter the size of the parking lot.
+    <input type="number" name="parkingLotSize" id="parkingLotSize" required><br><br>
+    Enter Number of cars initially in the parking lot.
+    <input type="number" name="initialCarCount" id="initialCarCount" required>
+    <!-- <button onclick="initializeParkingLot();" id="submit">Submit</button> -->
+    <input type="submit" onclick="initializeParkingLot();" id="submit">
+    </div>
+
+    <div id="searchAndEntry" style="display:none">
+    <p>
+        <h4>New Entry</h4><br>
+        
+        Car Registration Number <input type="text" name="registration" id="registration"><br><br>
+        <select id="color">
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Red">Red</option>
+            <option value="Blue">Blue</option>
+          </select>
+        <button onclick="vehicleEntry();">Insert</button>
+    </p>
+            
+    
+
+    <div id="search" style="margin-top:20px;margin-bottom:20px"><h4>Search Cars by</h4> 
+
+            <div>
+                    <input type="radio" id="carColorSearchRadio"
+                     name="search" value="color" onclick="showColorOptions('color');"  >
+                    <label for="carColor">Color</label>
+                
+                    <input type="radio" id="registrationNumberSearchRadio"
+                     name="search" value="number" onclick="showColorOptions('number')";>
+                    <label for="registrationNumber">Registration Number</label>
+    
+                  </div>
+
+
+                  <div id="colorOptions" style="display:none" >
+                        <input type="radio" id="blue"
+                         name="coloroptions" value="blue" onclick="filterByColor('Blue');">
+                        <label for="blue">Blue</label>
+                    
+                        <input type="radio" id="red"
+                         name="coloroptions" value="red" onclick="filterByColor('Red');" >
+                        <label for="red">Red</label>
+
+                        <input type="radio" id="black"
+                         name="coloroptions" value="black" onclick="filterByColor('Black');">
+                        <label for="black">Black</label>
+
+                        <input type="radio" id="white"
+                         name="coloroptions" value="white" onclick="filterByColor('White');">
+                        <label for="white">White</label>
+
+    
+        
+                      </div>
+                      
+                      <div id="registrationSearchSection" style="display:none">
+                          
+                      <input type="text" name="registrationSearch" id="registrationSearch" >
+                      <label for="registrationSearch">Registration Number</label>
+                    <button type="submit" onclick="filterByRegistrationNumber();">Search</button> 
+
+                  </div>
+                  <button onclick="displayCarsTable();" style="margin-top:40px;margin-bottom:20px">Show All Slots</button>
+
+    </div>
+</div>        
+
+    <div id="box"></div>
+
+    
+</body>
+</html>
